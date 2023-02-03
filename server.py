@@ -6,7 +6,6 @@ import json
 from werkzeug.utils import secure_filename
 from Crypto.Hash import SHA3_512
 import time
-from d2.lib.globals import env
 import base64
 from jose import jwe
 
