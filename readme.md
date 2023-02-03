@@ -13,7 +13,7 @@ import json
 import time
 import base64
 from jose import jwe
-env = 'something that is compliant with A256GCM'
+env = 'something that is compliant with A256GCM' #you need to also add ENV to server.py
 def createRmoteToken():
         """
         Returns a JSON Web token (JWT) that is allowed for auth (JWE)
