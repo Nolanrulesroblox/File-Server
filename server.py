@@ -8,7 +8,8 @@ from Crypto.Hash import SHA3_512
 import time
 import base64
 from jose import jwe
-
+# env for decrypting
+env = None
 # Initialize a Flask application
 app = Flask(__name__)
 
@@ -164,7 +165,7 @@ def uploadFile():
 
     if token:
         # Decrypt the token
-        dec_payload = jwe.decrypt(base64.urlsafe_b64decode(token), env['JWE'])
+        dec_payload = jwe.decrypt(base64.urlsafe_b64decode(token), env)
         if dec_payload and not app.debug == True:
             # Load the data from the decrypted payload or if in debug mode, skip
             data = json.loads(dec_payload.decode())
